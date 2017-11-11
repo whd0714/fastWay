@@ -33,7 +33,7 @@ typedef struct _linkedlist {
 
 
 /** ADT **/
-void Linit(List* list); //list initialize
+void LInit(List* list); //list initialize
 void LInsert(List* list, Pair p);   //insert node at the front 
 
 //returns true if successful, false if failed.
@@ -43,5 +43,5 @@ bool LFirst(List* list, Pair* p);
 bool LNext(List* list, Pair * p);   
 
 Pair makePair(Vertex ver, int weight); //making new pair
-
+void showPair(Pair p);//show information of Pair
 #endif

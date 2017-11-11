@@ -1,7 +1,10 @@
+#include "stdafx.h"
 #include <iostream>
 #include "LinkedList.h"
 
-void Linit(List* list) {
+using namespace std;
+
+void LInit(List* list) {
     Node* DMY = new Node; //making dummy node
     list->head = DMY;
     list->head->next = NULL;
@@ -52,4 +55,11 @@ Pair makePair(Vertex ver, int weight) {
     p.vertex = ver;
     p.weigth = weight;
     return p;
+}
+void showPair(Pair p) {
+
+    cout << "location name : " << p.vertex.location_name << endl;
+    cout << "Address : " << p.vertex.address << endl;
+    cout << "weight : " << p.weigth << endl;
+
 }

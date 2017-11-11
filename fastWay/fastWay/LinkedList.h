@@ -3,27 +3,27 @@
 
 #include <string>
 
-//지점 정보 
+// vertex information
 typedef struct _vertex {
     int vertex_num;
     std::string location_name; //const?
     std::string address;
 }Vertex;
 
-//linked list에 저장할 pair struct
+
 typedef struct _pair {
     Vertex vertex; 
     unsigned int weigth; 
 }Pair;
 
 
-//Linked List에 저장할 node
+//node will be stored in LinkedList
 typedef struct _node {
     Pair pair;
-    struct _node *next; //다음 node를 가리키는 포인터
+    struct _node *next; 
 }Node;
 
-//더미노드가 있는 linked list
+//LinkedList has dummy node
 typedef struct _linkedlist {
     int numOfNode;
     Node* head;
@@ -33,15 +33,15 @@ typedef struct _linkedlist {
 
 
 /** ADT **/
-void Linit(List* list); //list 초기화
-void LInsert(List* list, Pair p);   //앞부분에 삽입
+void Linit(List* list); //list initialize
+void LInsert(List* list, Pair p);   //insert node at the front 
 
-//조회 -> 성공하면 true, 실패하면 false 반환
-//LFirst : Linked List의 첫번째 노드 조회
-//LNext : LFirst 수행 후 다음 노드 조회
+//returns true if successful, false if failed.
+//LFirst : Search the first node of List
+//LNext : Search next node of List
 bool LFirst(List* list, Pair* p);    
 bool LNext(List* list, Pair * p);   
 
-Pair makePair(Vertex ver, int weight); //pair 만듬
+Pair makePair(Vertex ver, int weight); //making new pair
 
 #endif

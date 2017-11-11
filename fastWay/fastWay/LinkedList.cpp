@@ -2,7 +2,7 @@
 #include "LinkedList.h"
 
 void Linit(List* list) {
-    Node* DMY = new Node; //더미노드 생성
+    Node* DMY = new Node; //making dummy node
     list->head = DMY;
     list->head->next = NULL;
     DMY->next = NULL;
@@ -20,9 +20,9 @@ void LInsert(List* list, Pair p) {
 
 }
 
-// 첫번째 노드 탐색
+//Search the first node of List
 bool LFirst(List* list, Pair* p) {
-    //List가 비어있는 경우 
+    //If the list is empty
     if (list->head->next == NULL)
         return false;   
     
@@ -35,7 +35,7 @@ bool LFirst(List* list, Pair* p) {
 }
 
 bool LNext(List* list, Pair * p) {
-    //더이상 조회할 노드가 없을 때
+    //If the node to query does not exist
     if (list->cur->next == NULL)
         return false;
 
